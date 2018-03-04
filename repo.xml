@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo priority="100" quality="experimental" status="unofficial">
+	<name><![CDATA[mpolr]]></name>
+	<description lang="en"><![CDATA[mPolr`s personal overlay]]></description>
+	<homepage>https://github.com/mPolr/overlay</homepage>
+	<owner type="person">
+	  <email>overlay@mpolr.ru</email>
+	  <name><![CDATA[Pavel Monahov]]></name>
+	</owner>
+	<source type="git">git://github.com/mPolr/overlay.git</source>
+  </repo>
+</repositories>
