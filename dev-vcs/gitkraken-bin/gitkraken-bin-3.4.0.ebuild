@@ -19,27 +19,27 @@ DEPEND=""
 RDEPEND="
 	>=x11-libs/gtk+-3.22
 "
-RESTRICT="bindist mirror"
+RESTRICT="mirror"
 
 # Silence QA messages
-QA_PREBUILT="opt/${PN}-${PV}/*"
+QA_PREBUILT="opt/${MY_PN}/*"
 
 S="${WORKDIR}"/gitkraken
 
 src_install() {
-        local dst="/opt/${PN}-${PV}" # install destination
+        local dst="/opt/${MY_PN}" # install destination
 
         insinto ${dst}
         doins -r ./*
 	doins "${FILESDIR}/gitkraken.png"
-	newicon "${FILESDIR}/gitkraken.png" gitkraken.png
+	newicon -s 128 "${FILESDIR}/gitkraken.png" gitkraken.png
 
         # Set permissions for executables and libraries
         fperms 655 ${dst}/gitkraken
 
-	dodir /opt/bin
-        dosym ${dst}/gitkraken /opt/bin/gitkraken
-        make_desktop_entry gitkraken "GitKraken ${PV}" gitkraken Development
+	dodir /usr/bin
+        dosym ${dst}/gitkraken /usr/bin/gitkraken
+        make_desktop_entry /usr/bin/gitkraken "GitKraken ${PV}" ${MY_PN} Development
 }
 
 pkg_postinst() {
@@ -49,4 +49,3 @@ pkg_postinst() {
 pkg_postrm() {
         gnome2_icon_cache_update
 }
-
