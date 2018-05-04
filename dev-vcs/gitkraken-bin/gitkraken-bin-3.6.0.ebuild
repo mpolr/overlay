@@ -6,7 +6,7 @@ MY_PN=${PN/-bin/}
 SRC_URI="https://release.gitkraken.com/linux/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
 KEYWORDS="~amd64"
 
-inherit eutils gnome2-utils desktop
+inherit eutils multilib desktop gnome2-utils
 
 DESCRIPTION="The legendary Git GUI client for Windows, Mac and Linux"
 HOMEPAGE="https://www.gitkraken.com"
@@ -18,6 +18,7 @@ DEPEND=""
 
 RDEPEND="
 	>=x11-libs/gtk+-3.22
+	>=net-misc/curl-7.57
 "
 RESTRICT="mirror"
 
@@ -32,14 +33,16 @@ src_install() {
         insinto ${dst}
         doins -r ./*
 	doins "${FILESDIR}/gitkraken.png"
-	newicon -s 128 "${FILESDIR}/gitkraken.png" gitkraken.png
+	doicon "${dst}/gitkraken.png" || die "doicon failed"
+	newicon -s 128 "${dst}/gitkraken.png" gitkraken.png
 
         # Set permissions for executables and libraries
         fperms 655 ${dst}/gitkraken
 
 	dodir /usr/bin
         dosym ${dst}/gitkraken /usr/bin/gitkraken
-        make_desktop_entry /usr/bin/gitkraken "GitKraken ${PV}" ${MY_PN} Development
+	dosym /usr/$(get_libdir)/libcurl.so.4 /usr/$(get_libdir)/libcurl-gnutls.so.4
+	make_desktop_entry ${MY_PN} GitKraken ${MY_PN} Development
 }
 
 pkg_postinst() {
