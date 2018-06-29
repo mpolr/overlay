@@ -27,10 +27,6 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}"/libbaseencode-cmake-libdir.patch
-)
-
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr ../
