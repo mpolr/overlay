@@ -37,7 +37,7 @@ src_install() {
 
   dosym /opt/${MY_PN}/Postman /usr/bin/${MY_PN}
 
-  newicon -s 128 ${S}/resources/app/assets/icon.png postman.png
+  newicon -s 128 ${S}/app/resources/app/assets/icon.png postman.png
 
   make_desktop_entry "postman" \
       "Postman" \
