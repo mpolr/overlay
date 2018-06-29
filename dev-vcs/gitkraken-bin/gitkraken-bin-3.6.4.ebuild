@@ -32,9 +32,8 @@ src_install() {
 
         insinto ${dst}
         doins -r ./*
-	doins "${FILESDIR}/gitkraken.png"
-	doicon "${dst}/gitkraken.png" || die "doicon failed"
-	newicon -s 128 "${dst}/gitkraken.png" gitkraken.png
+	doins "${FILESDIR}/gitkraken.png" || die "icon doins failed"
+	newicon -s 128 "${FILESDIR}/gitkraken.png" gitkraken.png || die "newicon failed"
 
         # Set permissions for executables and libraries
         fperms 655 ${dst}/gitkraken
