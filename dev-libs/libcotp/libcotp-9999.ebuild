@@ -23,13 +23,8 @@ IUSE=""
 DEPEND="
 	>=sys-devel/gcc-6.4.0
         >=dev-util/cmake-3.8.2
-	>=dev-libs/libbaseencode-1.0.2
+	>=dev-libs/libbaseencode-1.0.6
 "
-
-PATCHES=(
-        "${FILESDIR}"/libcotp-cmake-libdir.patch
-)
-
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr ../
