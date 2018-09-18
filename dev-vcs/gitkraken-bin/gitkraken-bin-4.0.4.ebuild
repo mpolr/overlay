@@ -3,7 +3,7 @@
 
 EAPI=6
 MY_PN=${PN/-bin/}
-SRC_URI="https://release.gitkraken.com/linux/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
+SRC_URI="https://release.gitkraken.com/linux/GitKraken-v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
 KEYWORDS="~amd64"
 
 inherit eutils multilib desktop gnome2-utils
