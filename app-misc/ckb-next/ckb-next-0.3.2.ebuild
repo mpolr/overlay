@@ -20,7 +20,7 @@ DEPEND=">=dev-libs/quazip-0.7.2[qt5(+)]
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5"
 RDEPEND="${DEPEND}"
-
+RESTRICT="mirror"
 DOCS=( README.md BUILD.md DAEMON.md )
 
 
@@ -34,8 +34,8 @@ src_configure() {
 src_install() {
 	cd ${BUILD_DIR}
 	dobin bin/ckb-next bin/ckb-next-daemon
-	dodir /usr/libexec/ckb-next-animations
-	exeinto /usr/libexec/ckb-next-animations
+	dodir /usr/lib/ckb-next-animations
+	exeinto /usr/lib/ckb-next-animations
 	doexe bin/*
 	newinitd "${FILESDIR}"/ckb-next.initd ckb-next-daemon
 	make_desktop_entry ${PN} "Corsair Keyboard Driver" "${PN}" Settings
