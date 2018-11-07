@@ -32,11 +32,12 @@ RDEPEND="
 	>=dev-libs/libgcrypt-1.6.0
 	>=x11-libs/gtk+-3.22
 	>=dev-libs/glib-2.50.0
-	>=dev-libs/jansson-2.8.0
-	>=dev-libs/libzip-1.1.0
-	>=dev-libs/libbaseencode-1.0.2
-	>=dev-libs/libcotp-1.0.10
+	>=dev-libs/jansson-2.6.0
+	>=dev-libs/libzip-1.0.0
+	>=dev-libs/libbaseencode-1.0.9
+	>=dev-libs/libcotp-1.2.1
 	>=media-gfx/zbar-0.10
+	>=media-libs/libpng-1.2.0
 "
 
 src_configure() {
