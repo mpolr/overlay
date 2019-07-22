@@ -40,7 +40,7 @@ src_install() {
 
 	dodir /usr/bin
         dosym ${dst}/gitkraken /usr/bin/gitkraken
-	dosym /usr/$(get_libdir)/libcurl.so.4 /usr/$(get_libdir)/libcurl-gnutls.so.4
+	#dosym /usr/$(get_libdir)/libcurl.so.4 /usr/$(get_libdir)/libcurl-gnutls.so.4
 	make_desktop_entry ${MY_PN} GitKraken ${MY_PN} Development
 }
 
