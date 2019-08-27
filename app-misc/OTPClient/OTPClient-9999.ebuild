@@ -19,6 +19,7 @@ HOMEPAGE="https://github.com/paolostivanin/OTPClient"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
+RESTRICT="mirror"
 
 DEPEND="
 	>=sys-devel/gcc-6.4.0
