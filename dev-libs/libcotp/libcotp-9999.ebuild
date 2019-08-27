@@ -19,6 +19,7 @@ HOMEPAGE="https://github.com/paolostivanin/libcotp"
 LICENSE="Apache-2.0"
 SLOT="0"
 IUSE=""
+RESTRICT="mirror"
 
 DEPEND="
 	>=sys-devel/gcc-6.4.0
