@@ -1,8 +1,8 @@
 EAPI=5
 inherit eutils
 
-#EAP_VERSION='192.5728.108'
-MY_PV='2019.2'
+#EAP_VERSION='191.7479.51'
+MY_PV='2019.1.3'
 
 HOMEPAGE="http://www.jetbrains.com/phpstorm/"
 DESCRIPTION="PhpStorm"
@@ -34,7 +34,10 @@ src_install() {
 	fperms a+x /opt/${PN}/bin/fsnotifier64 || die "Chmod failed"
 	rm -f ${D}/opt/${PN}/bin/fsnotifier-arm
 	dosym /opt/${PN}/bin/phpstorm.sh /usr/bin/${PN}
-
+	for i in $(ls ${D}/opt/${PN}/jre64/bin/)
+        do
+                fperms a+x /opt/${PN}/jre64/bin/${i} || die "Chmod failed"
+        done;
 	doicon "bin/${PN}.png"
 	make_desktop_entry ${PN} "${PROGNAME}" "${PN}"
 }
