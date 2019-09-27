@@ -6,12 +6,12 @@ EAPI=6
 SRC_URI="amd64? ( 
 			http://www.profilesql.com/files/download/sqlprofiler-${PV}-x64.rpm
 			https://rpmfind.net/linux/mageia/distrib/4/x86_64/media/core/updates/lib64icu52-52.1-2.5.mga4.x86_64.rpm
-			https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/l/libpng12-1.2.57-6.fc28.x86_64.rpm
+			http://ftp.asti.dost.gov.ph/pub/fedora/development/rawhide/Everything/x86_64/os/Packages/l/libpng12-1.2.57-6.fc28.x86_64.rpm
 		 )
 	x86? ( 
 			http://www.profilesql.com/files/download/sqlprofiler-${PV}-x32.rpm
 			https://rpmfind.net/linux/mageia/distrib/4/i586/media/core/updates/libicu52-52.1-2.5.mga4.i586.rpm
-			https://rpmfind.net/linux/fedora-secondary/development/rawhide/Everything/i386/os/Packages/l/libpng12-1.2.57-6.fc28.i686.rpm
+			http://ftp.asti.dost.gov.ph/pub/fedora/development/rawhide/Everything/x86_64/os/Packages/l/libpng12-1.2.57-6.fc28.i686.rpm
 	 )"
 KEYWORDS="~amd64 ~x86"
 
@@ -28,7 +28,7 @@ RDEPEND=""
 RESTRICT="mirror"
 
 # Silence QA messages
-QA_PREBUILT="/usr/*"
+QA_PREBUILT="usr/lib/*"
 
 S=${WORKDIR}/usr
 
